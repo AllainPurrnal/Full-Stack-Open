@@ -1,15 +1,14 @@
-// Rules of Hooks
+// 
 
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => {
+const App = (props) => {
+
 
   return (
     <div>
-      <p>
-        Hello World!
-      </p>
+      Hello World!
     </div>
   )
 }
