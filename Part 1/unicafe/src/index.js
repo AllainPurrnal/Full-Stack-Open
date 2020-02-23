@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  const [ good, setGood ] = useState(0)
+  const [ neutral, setNeutral ] = useState(0)
+  const [ bad, setBad ] = useState(0)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  const goodFeedback = (newFeedback) => {
+    setGood(newFeedback)
+    console.log("Good:", newFeedback)
+  }
+
+  const neutralFeedback = (newFeedback) => {
+    setNeutral(newFeedback)
+    console.log("Neutral:", newFeedback)
+  }
+
+  const badFeedback = (newFeedback) => {
+    setBad(newFeedback)
+    console.log("Bad:", newFeedback)
+  }
+
+  return (
+    <div>
+      <h1> Feedback! </h1>
+      <button onClick={() => goodFeedback(good + 1)} > Good </button>
+      <button onClick={() => neutralFeedback(neutral + 1)} > Neutral </button>
+      <button onClick={() => badFeedback(bad + 1)}> Bad </button>
+
+      <h3>Stats</h3>
+      <p> Good: {good} </p>
+      <p> Neutral: {neutral} </p>
+      <p> Bad: {bad} </p>
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
