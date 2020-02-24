@@ -8,5 +8,27 @@ Full Stack Open is an open source Web Development course by the University of He
 *The 2019 edition has now ended. The 2020 version wil start March 15th and will be open until January 10th 2021*
 
 ## Table of Contents
-1. [Part 1 - Interoduction to React](#Part1) 
+1. [Part 1 - Introduction to React](#Part1)
+
+    a. Introduction to React
+    
+    b. JavaScript
+    
+    c. Component State, Event Handlers
+    - Destructuring
+    - Stateful Component
+    - Event Handling
+    - 
+    
+    d. A more complext state, debugging React apps
+    - Complex State
+    - Handling Arrays
+    - Conditional Rendering
+    - Rules of Hooks
+    - Event Handling Revisited
+    - Passing Event Handlers To Child Components
+    
+    Exercises
     - Course Info
+    - Unicafe
+    - Anecdotes
