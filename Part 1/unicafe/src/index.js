@@ -17,19 +17,24 @@ const Statistics = (props) => {
   }
   
   return (
-    <>
-      <Statistic text="Good" value={props.goodVal} />
-      <Statistic text="Neutral" value={props.neutralVal} />
-      <Statistic text="Bad" value={props.badVal} />
-      <Statistic text="All" value={props.feedbackVal} />
-      <Statistic text="Positive" value={props.goodVal / props.feedbackVal} />
-      {/* {console.log(props)} */}
-    </>
+    <table>
+      <tbody>
+        <Statistic text="Good" value={props.goodVal} />
+        <Statistic text="Neutral" value={props.neutralVal} />
+        <Statistic text="Bad" value={props.badVal} />
+        <Statistic text="All" value={props.feedbackVal} />
+        <Statistic text="Positive" value={props.goodVal / props.feedbackVal} />
+        {/* {console.log(props)} */}
+      </tbody>
+    </table>
   )
 }
 
 const Statistic = (props) => (
-    <p> {props.text} {props.value}</p>
+  <tr>
+    <td>{props.text}</td>
+    <td>{props.value}</td>
+  </tr>
 )
 
 const App = () => {
