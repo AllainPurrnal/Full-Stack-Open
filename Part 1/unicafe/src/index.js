@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
+const Button = ({ onClick, text }) => (
+  <button onClick={onClick}>
+    {text}
+  </button>
+)
+
 const Statistics = (props) => {
   if (props.feedbackVal === 0) {
     return (
@@ -12,15 +18,19 @@ const Statistics = (props) => {
   
   return (
     <>
-      {console.log(props)}
-      <p> Good: {props.goodVal} </p>
-      <p> Neutral: {props.neutralVal} </p>
-      <p> Bad: {props.badVal} </p>
-      <p> All: {props.feedbackVal} </p>
-      <p> Positive: {props.goodVal / props.feedbackVal} </p>
+      <Statistic text="Good" value={props.goodVal} />
+      <Statistic text="Neutral" value={props.neutralVal} />
+      <Statistic text="Bad" value={props.badVal} />
+      <Statistic text="All" value={props.feedbackVal} />
+      <Statistic text="Positive" value={props.goodVal / props.feedbackVal} />
+      {/* {console.log(props)} */}
     </>
   )
 }
+
+const Statistic = (props) => (
+    <p> {props.text} {props.value}</p>
+)
 
 const App = () => {
   const [ good, setGood ] = useState(0)
@@ -49,9 +59,9 @@ const App = () => {
   return (
     <div>
       <h1> Feedback! </h1>
-        <button onClick={() => goodFeedback(good)} > Good </button>
-        <button onClick={() => neutralFeedback(neutral)} > Neutral </button>
-        <button onClick={() => badFeedback(bad)}> Bad </button>
+        <Button text="Good" onClick={() => goodFeedback(good)}/>
+        <Button text="Neutral" onClick={() => neutralFeedback(neutral)} />
+        <Button text="Bad" onClick={() => badFeedback(bad)} />
 
       <h3> Stats </h3>
       <Statistics goodVal={good} neutralVal={neutral} badVal={bad} feedbackVal={feedback} />
