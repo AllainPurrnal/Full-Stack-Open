@@ -1,13 +1,31 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
+const Button = ({ onClick, text }) => (
+  <button onClick={onClick}>
+    {text}
+  </button>
+)
+
 const App = (props) => {
-  const [ selected, useSelected ] = useState(0)
+  const [ selected, setSelected ] = useState(0)
+  const [ points, setPoints ] = useState({})
+
+  const random = () => {
+    let a = Math.floor(Math.random() * 5)
+    return a
+  }
+
+  const newAnecdote = (selected) => {
+    setSelected(selected = random())
+  }
 
   return (
     <div>
-      {console.log(anecdotes)}
-      {props.anecdotes[selected]}
+      {props.anecdotes[random()]}
+      <div>
+        <Button text="new anecdote" onClick={() => newAnecdote(selected)} />
+      </div>
     </div>
   )
 }
