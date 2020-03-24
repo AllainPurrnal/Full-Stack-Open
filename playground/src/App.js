@@ -23,15 +23,19 @@ const App = () => {
           exercises: 14
         }
       ],
-      id: 1
+      id: 0
     }
   ]
 
+  let cat = courses.map((course, id) => 
+    <Course key={course.id} course={course} />
+  )
+
   return (
-    <div>
-      <Course courses={courses} />
-      {/* {console.log("App", courses[0])} */}
-    </div>
+    <>
+      {cat}
+      {/* {console.log("App", course.id)} */}
+    </>
   )
 }
 

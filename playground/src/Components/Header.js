@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Header = ({ course }) => {
-  // console.log("Header", course.name)
   
   return(
     <>
-      <h1>{course.name}</h1>
+      {/* {console.log("Header", course)} */}
+      <h1>{course}</h1>
     </>
   )
 }

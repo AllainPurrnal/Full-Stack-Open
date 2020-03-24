@@ -2,12 +2,16 @@ import React from 'react';
 
 import Part from './Part.js';
 
-const Content = ({ course }) => {
-  console.log("Content", course.parts.name)
+const Content = ({ parts }) => {
+
+  let catPart = parts.map((item, id) =>
+    <Part key={item.id} part={item.name} exercise={item.exercises} />
+  )
 
   return(
     <>
-      <Part part={course.parts.name} exercise={course.parts.exercise}/>
+      {/* {console.log("Content", parts)} */}
+      {catPart}
     </>
   )
 }
