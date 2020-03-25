@@ -11,7 +11,7 @@ const Course = ({ course }) => {
     {console.log("Course", course.parts)}
     <Header course={course.name}/>
     <Content parts={course.parts} />
-    {/* <Total part={course.parts} /> */}
+    <Total parts={course.parts} />
   </>
   )
 }

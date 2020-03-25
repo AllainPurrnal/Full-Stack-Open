@@ -5,7 +5,7 @@ const Header = ({ course }) => {
   return(
     <>
       {/* {console.log("Header", course)} */}
-      <h1>{course}</h1>
+      <h3>{course}</h3>
     </>
   )
 }

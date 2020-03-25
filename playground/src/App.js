@@ -6,24 +6,40 @@ const App = () => {
   const courses = [
     {
       name: 'Half Stack application development',
+      id: 1,
       parts: [
         {
-          id: 1,
           name: 'Fundamentals of React',
-          exercises: 10
+          exercises: 10,
+          id: 1
         },
         {
-          id: 2,
           name: 'Using Props To Pass Data',
-          exercises: 7
+          exercises: 7,
+          id: 2
         },
         {
-          id: 3,
           name: 'State of a Component',
-          exercises: 14
+          exercises: 14,
+          id: 3
         }
       ],
-      id: 0
+    },
+    {
+      name: 'Node.js',
+      id: 2,
+      parts: [
+        {
+          name: 'Routing',
+          exercises: 3,
+          id: 1
+        },
+        {
+          name: 'Middlewares',
+          exercises: 7,
+          id: 2
+        }
+      ]
     }
   ]
 
@@ -33,8 +49,8 @@ const App = () => {
 
   return (
     <>
+      <h1> Web Development Curriculum</h1>
       {cat}
-      {/* {console.log("App", course.id)} */}
     </>
   )
 }
